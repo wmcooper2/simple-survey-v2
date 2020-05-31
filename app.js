@@ -8,13 +8,13 @@ const usersRouter = require("./routes/users");
 const app = express();
 const bodyParser = require("body-parser");
 
+require("dotenv").config();
+
 const MongoClient = require("mongodb").MongoClient;
 const assert = require("assert");
 
 // Connection URL
-const url = "mongodb://localhost:27017";
-// Database Name
-const dbName = "myproject";
+// const url = "mongodb://localhost:27017";
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -27,27 +27,21 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Use connect method to connect to the server
-MongoClient.connect(url, { useUnifiedTopology: true }, function (err, client) {
+MongoClient.connect(process.env.DB_URL, { useUnifiedTopology: true }, function (
+  err,
+  client
+) {
   assert.equal(null, err);
-  console.log("Connected successfully to server");
-  const db = client.db(dbName);
+  const db = client.db(process.env.DB_NAME);
+  console.log("Connected to database: ", process.env.DB_NAME);
 
-
-
-
+  //make a collection
+  const simpleSurvey = db.collection(process.env.DB_COLLECTION);
   ///to pass the db around
-  console.log("Connected to Database.");
-  const opinions = db.collection("simplesurveyv2");
   app.use((req, res, next) => {
-    res.locals.opinions = opinions;
+    res.locals.simpleSurvey = simpleSurvey;
     next();
   });
-
-
-
-
-
-
 
   app.use("/", indexRouter);
   app.use("/users", usersRouter);
@@ -68,7 +62,7 @@ MongoClient.connect(url, { useUnifiedTopology: true }, function (err, client) {
     res.render("error");
   });
 
-  client.close();
+  // client.close();
 });
 
 module.exports = app;

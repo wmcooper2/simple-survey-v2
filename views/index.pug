@@ -43,7 +43,7 @@ block content
         option(value="17") Master's Degree
         option(value="18") Doctorate Degree
 
-    div.formgroup
+    //- div.formgroup
       label(for="subjects") What school subjects did you like?
       each subject in [ "math", "science", "english", "art", "social studies", "home economics", "physical education", "none" ]
         input(type="checkbox", name=subject, value="true")
@@ -56,3 +56,7 @@ block content
       button(type="submit", id="sumbit") Submit
 
 
+    div
+      ul
+        each entry in data
+          li= entry.firstname
