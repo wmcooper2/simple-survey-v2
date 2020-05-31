@@ -24,4 +24,6 @@ To show how I've improved over the last couple of years by redoing an old projec
 N/A
 
 ## More Information
-The original (version 1) simple survey can be found [here]() if you are interested to see how I've progressed.
+The original (version 1) simple survey can be found [here](https://s3-ap-northeast-1.amazonaws.com/wmcooper2.com/fcc-projects/survey/survey.html) if you are interested to see how I've progressed.  
+[Color Palette](https://paletton.com/#uid=73i0u0k5vLq0tZR2rUl9z-reHsl)
+

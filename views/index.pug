@@ -13,14 +13,14 @@ block content
       input(type="text", name="lastname", placeholder="last", id="last", required)
 
     div.formgroup
-      input(type="email", name="email", placeholder="email" id="email", required)
-      input(type="tel", name="phone", pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}", placeholder="phone", required)
+      input(type="email", name="email", placeholder="email" id="email")
+      input(type="tel", name="phone", pattern="[()-.0-9_]{9}", placeholder="ex: 123456789 or (916) 911-9111")
 
     div.formgroup
-      input(type="number", name="idnumber", placeholder="ID number", required) 
-      input(type="number", name="age", placeholder="age", required)
+      input(type="number", name="idnumber", placeholder="ID number") 
+      input(type="number", name="age", placeholder="age")
 
-    div.formgroup
+    div.formgroup.edu
       label(for="education") Highest level of education?
       select(id="education", name="education")
         option(value="0") Kindergarten

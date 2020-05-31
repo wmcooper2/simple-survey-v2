@@ -9,7 +9,7 @@ router.get("/", (req, res, next) => {
     .aggregate([{ $sample: { size: 3 } }])
     .toArray()
     .then((randomData) => {
-      console.log("Random Data: ", randomData);
+      // console.log("Random Data: ", randomData);
       simpleSurvey
         .countDocuments()
         .then((result) => {

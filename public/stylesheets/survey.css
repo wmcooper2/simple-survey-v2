@@ -1,36 +1,62 @@
 * {
-  border-radius: 10px;
-  padding: 3px;
-  display: flex;
+  --form-edge-color: rgba(221, 226, 237, 1);
+  border-radius: 2px;
+  padding: 1rem;
+  /* display: flex; */
 }
 
 body {
-  position: relative;
-  padding: 2% 5%;
-  margin: auto;
-  background: hsl(228, 76%, 80%);
+  /* position: relative; */
+  /* padding: 2% 5%; */
+  /* margin: auto; */
+  background: white;
   display: flex;
   flex-direction: column;
-  min-width: 100px;
-  max-width: 800px;
+  align-items: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: hsl(182, 30%, 85%);
+  max-width: 210mm;
+  background-color: white;
+  border: 1px solid var(--form-edge-color);
+  box-shadow: 2px 2px 2px 2px var(--form-edge-color);
 }
 
-textarea{
-  position: relative;
+/* textarea { */
+/* position: relative; */
+/* padding: 10px; */
+/* width: 100%; */
+/* border: none; */
+/* } */
+
+input {
   padding: 10px;
-  width: 100%;
+  border-radius: 2px;
   border: none;
+  background-color: hsl(0, 100%, 100%);
 }
 
-textarea::placeholder {
-  padding-top: 55px;
+input {
+  width: 30%;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  position: relative;
+  padding-top: 3px;
+  width: 20px;
+  height: 20px;
+}
+
+input:hover {
+  box-shadow: 0px 0px 1px 1px rgba(134, 148, 182, 1);
+}
+
+li {
+  list-style-type: none;
 }
 
 label {
@@ -44,20 +70,6 @@ label {
   align-items: center;
 }
 
-input, select{
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  background-color: hsl(0, 100%, 100%);
-}
-
-input[type=radio], input[type=checkbox]{
-  position: relative;
-  padding-top: 3px;
-  width: 20px;
-  height: 20px;
-}
-
 span {
   position: relative;
   padding-left: 10px;
@@ -65,53 +77,25 @@ span {
   font-weight: 200;
 }
 
-input:hover {
-    box-shadow: 0px 0px 3px 3px rgba(255,249,179,1);
+:required:hover {
+  /* background-color: red; */
+  box-shadow: 0px 0px 1px 1px red;
 }
 
-select:hover {
-    box-shadow: 0px 0px 3px 3px rgba(255,249,179,1);
+.formgroup {
+  display: flex;
+  justify-content: space-around;
 }
 
-textarea:hover {
-    box-shadow: 0px 0px 3px 3px rgba(255,249,179,1);
-}
-
-#title{
+#title {
   text-align: center;
   background-color: hsl(182, 30%, 85%);
   margin: 10px auto;
 }
 
-#description{
+#description {
   text-align: center;
   margin: auto;
-}
-
-.question {
-  background: hsl(162, 50%, 80%);
-  padding: 10px;
-  position: relative;
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-.radioquestion, .checkboxquestion {
-  padding: 10px;
-  background-color: hsl(0, 100%, 100%);
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr  19fr;
-  grid-template-rows: repeat(3, 1fr)
-  justify-items: center;
-  align-items: center;
-}
-
-#submitdiv {
-  display: flex;
-  background-color: hsl(182, 30%, 85%);
-  flex-direction: row;
-  justify-content: center;
 }
 
 #submit {
