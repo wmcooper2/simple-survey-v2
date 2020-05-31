@@ -1,0 +1,7 @@
+echo "Starting..."
+echo "Go to http://localhost:3000/ to see your project."
+echo "Press Ctrl+C to quit."
+echo "Here's the Express guide, https://expressjs.com/en/guide/routing.html"
+
+DEBUG=myapp:* npm start
+#DEBUG=myapp:* nodemon start

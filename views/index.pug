@@ -1,5 +1,58 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Real Simple Fake Survey
+  p Welcome to my simple survey. Tell me about your fake self so that I may collect your real fake-data.
+  p So far, there are #{documents} entries in this database.
+
+  p Enter some fake info. Please and thanks.
+
+  form(method="POST", action="/submitform")
+    div.formgroup
+      input(type="text", name="firstname", placeholder="first", id="first", required)
+      input(type="text", name="lastname", placeholder="last", id="last", required)
+
+    div.formgroup
+      input(type="email", name="email", placeholder="email" id="email", required)
+      input(type="tel", name="phone", pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}", placeholder="phone", required)
+
+    div.formgroup
+      input(type="number", name="idnumber", placeholder="ID number", required) 
+      input(type="number", name="age", placeholder="age", required)
+
+    div.formgroup
+      label(for="education") Highest level of education?
+      select(id="education", name="education")
+        option(value="0") Kindergarten
+        option(value="1") 1
+        option(value="2") 2
+        option(value="3") 3
+        option(value="4") 4
+        option(value="5") 5
+        option(value="6") 6
+        option(value="7") 7
+        option(value="8") 8
+        option(value="9") 9
+        option(value="10") 10
+        option(value="11") 11
+        option(value="12") 12
+        option(value="13") Professional Certificates
+        option(value="14") Vocational Diploma
+        option(value="15") Associates Degree
+        option(value="16") Bachelor's Degree
+        option(value="17") Master's Degree
+        option(value="18") Doctorate Degree
+
+    div.formgroup
+      label(for="subjects") What school subjects did you like?
+      each subject in [ "math", "science", "english", "art", "social studies", "home economics", "physical education", "none" ]
+        input(type="checkbox", name=subject, value="true")
+
+    div.formgroup
+      label(for="comments") Tell me about your hobbies;
+      textarea(name="comments", rows="6", cols="60", placeholder="I eat boogies, I lick bicycle seats...")
+
+    div.formgroup
+      button(type="submit", id="sumbit") Submit
+
+
