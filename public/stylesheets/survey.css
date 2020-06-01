@@ -2,72 +2,92 @@
   --form-edge-color: rgba(221, 226, 237, 1);
   border-radius: 2px;
   padding: 1rem;
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  padding: 0;
 }
 
 body {
-  /* position: relative; */
-  /* padding: 2% 5%; */
-  /* margin: auto; */
-  background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  max-width: 210mm;
-  background-color: white;
+  padding: 0.5rem;
+  margin: 0 0;
   border: 1px solid var(--form-edge-color);
   box-shadow: 2px 2px 2px 2px var(--form-edge-color);
+  width: 90%;
+  max-width: 210mm;
 }
 
-/* textarea { */
-/* position: relative; */
-/* padding: 10px; */
-/* width: 100%; */
-/* border: none; */
-/* } */
+fieldset {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
 
 input {
-  padding: 10px;
+  background-color: hsl(0, 100%, 100%);
+  padding: 0.5rem;
   border-radius: 2px;
   border: none;
-  background-color: hsl(0, 100%, 100%);
+  outline: 1px solid rgba(255, 230, 179, 1);
+  width: 90%;
 }
 
-input {
-  width: 30%;
+input:hover,
+select:hover,
+textarea:hover {
+  background-color: rgba(255, 230, 179, 1);
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-  position: relative;
-  padding-top: 3px;
-  width: 20px;
-  height: 20px;
+/* remove arrows on number input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input:hover {
-  box-shadow: 0px 0px 1px 1px rgba(134, 148, 182, 1);
+/* remove arrows on number input */
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+label {
+  background-color: hsl(348, 40%, 95%);
+  padding: 0.5rem;
+  margin: 0;
+  /* display: flex; */
+  /* flex-direction: row; */
+  justify-self: flex-start;
+  /* text-align: left; */
+  align-items: flex-start;
+  width: 40%;
+}
+
+label div {
+  flex-direction: row;
 }
 
 li {
   list-style-type: none;
 }
 
-label {
-  position: relative;
-  background-color: hsl(348, 40%, 95%);
-  font-size: 16px;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
+select {
+  width: 100%;
+  /* outline: 1px solid rgba(255, 230, 179, 1); */
+  border: 1px solid rgba(255, 230, 179, 1);
+  padding: 0.5rem;
 }
 
 span {
@@ -77,14 +97,41 @@ span {
   font-weight: 200;
 }
 
-:required:hover {
-  /* background-color: red; */
-  box-shadow: 0px 0px 1px 1px red;
+textarea {
+  display: flex;
+  flex-direction: row;
+  justify-self: flex-start;
+  border: none;
+  outline: 1px solid rgba(255, 230, 179, 1);
+  width: 90%;
+}
+
+.namefield {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .formgroup {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0.5rem;
+  width: 100%;
+}
+
+.formgroupfields {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+div.formgroupfields div {
+  /* border: 1px solid purple; */
+  width: 50%;
+  padding: 0;
 }
 
 #title {
@@ -96,6 +143,17 @@ span {
 #description {
   text-align: center;
   margin: auto;
+}
+
+div.formgroup.submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 30%;
+}
+
+input[type="submit"]:hover {
+  background-color: rgba(117, 167, 167, 1);
 }
 
 #submit {
