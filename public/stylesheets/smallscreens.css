@@ -50,9 +50,19 @@
   }
 
   table tr {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: flex-start; */
     padding: 0;
+  }
+
+  .email,
+  .phone,
+  .education,
+  .lastname,
+  .idnumber,
+  .age {
+    display: none;
+    /* visibility: collapse; */
   }
 }

@@ -3,6 +3,8 @@ table {
   margin-top: 1rem;
   padding: 0;
   text-align: left;
+  word-break: break-all;
+  /* word-wrap: break-word; */
 }
 
 tbody {
@@ -11,4 +13,9 @@ tbody {
 
 tr {
   padding: 0;
+}
+
+.email,
+.phone {
+  width: 20%;
 }
