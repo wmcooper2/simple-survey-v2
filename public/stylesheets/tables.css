@@ -1,0 +1,14 @@
+table {
+  /* max-width: 210mm; */
+  margin-top: 1rem;
+  padding: 0;
+  text-align: left;
+}
+
+tbody {
+  padding: 0;
+}
+
+tr {
+  padding: 0;
+}

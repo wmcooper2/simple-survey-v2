@@ -4,6 +4,8 @@ block content
   h1 Real Simple Fake Survey
   p Welcome to my simple survey. Tell me about your fake self so that I may collect your real fake-data. Enter some fake info. If you need some inspiration, then take a look below the form to see what others have added to my collection (the data entered by others does not necessarily reflect my opinions). Please and thanks.
   p So far, there are #{documents} entries in this database.
+  a(href="/browse") Browse them here 
+
 
 
   form(method="POST", action="/submitform")
@@ -56,19 +58,3 @@ block content
 
     div.formgroup.submit
       input(type="submit", name="submit", value="Submit", id="sumbit")
-
-
-  table
-    thead
-      tr
-        th first name
-        th last name
-        th age
-        th hobbies
-    tbody
-      each entry in data
-        tr
-          td= entry.firstname
-          td= entry.lastname
-          td= entry.age
-          td.comments= entry.comments

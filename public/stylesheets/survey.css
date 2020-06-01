@@ -1,9 +1,7 @@
-@import "smallscreens.css";
 * {
   --form-edge-color: rgba(221, 226, 237, 1);
   border-radius: 2px;
   padding: 1rem;
-  background: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -37,10 +35,6 @@ html {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4f2f2', endColorstr='#fff2e7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-head {
-  display: none;
-}
-
 h1 {
   text-align: center;
 }
@@ -52,7 +46,6 @@ body {
   align-items: center;
   padding: 2rem;
   margin: 2rem;
-  max-width: 260mm;
 }
 
 form {
@@ -148,23 +141,6 @@ span {
   padding-left: 10px;
   vertical-align: center;
   font-weight: 200;
-}
-
-table {
-  margin-top: 1rem;
-  padding: 0;
-}
-
-tbody {
-  padding: 0;
-}
-
-tr {
-  padding: 0;
-}
-
-td.comments {
-  max-width: 50mm;
 }
 
 textarea {

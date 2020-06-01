@@ -13,6 +13,9 @@ require("dotenv").config();
 const MongoClient = require("mongodb").MongoClient;
 const assert = require("assert");
 
+// Connection URL
+// const url = "mongodb://localhost:27017";
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -31,8 +34,9 @@ MongoClient.connect(process.env.DB_URL, { useUnifiedTopology: true }, function (
   assert.equal(null, err);
   const db = client.db(process.env.DB_NAME);
   console.log("Connected to database: ", process.env.DB_NAME);
-  const simpleSurvey = db.collection(process.env.DB_COLLECTION);
 
+  //make a collection
+  const simpleSurvey = db.collection(process.env.DB_COLLECTION);
   ///to pass the db around
   app.use((req, res, next) => {
     res.locals.simpleSurvey = simpleSurvey;

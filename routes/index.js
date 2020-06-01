@@ -1,22 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
+router.get("/browse", (req, res, next) => {
   const simpleSurvey = res.locals.simpleSurvey;
-  let documentCount = "a bazillion";
-
-  let randomData = simpleSurvey
+  simpleSurvey
     .aggregate([{ $sample: { size: 10 } }])
     .toArray()
     .then((randomData) => {
-      simpleSurvey
-        .countDocuments()
-        .then((result) => {
-          res.render("index", { documents: result, data: randomData });
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+      res.render("browse", { data: randomData });
     })
     .catch((error) => {
       console.error(error);
@@ -54,6 +45,28 @@ router.get("/test/:banana", (req, res, next) => {
 
 router.get("/thankyou", (req, res, next) => {
   res.render("thankyou");
+});
+
+router.get("/", (req, res, next) => {
+  const simpleSurvey = res.locals.simpleSurvey;
+  let result = "a bazillion";
+
+  simpleSurvey
+    .aggregate([{ $sample: { size: 10 } }])
+    .toArray()
+    .then((randomData) => {
+      simpleSurvey
+        .countDocuments()
+        .then((result) => {
+          res.render("index", { documents: result, data: randomData });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 });
 
 module.exports = router;

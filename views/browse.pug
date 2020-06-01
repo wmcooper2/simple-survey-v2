@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    a(href="/") Home
+    table
+        thead
+            tr
+                th first
+                th last
+                th.email email
+                th phone
+                th ID
+                th age
+                th schooling
+                th hobbies
+        tbody
+            each entry in data
+                tr
+                    td.firstname= entry.firstname
+                    td.lastname= entry.lastname
+                    td.email= entry.email
+                    td.phone= entry.phone
+                    td.idnumber= entry.idnumber
+                    td.age= entry.age
+                    td.education= entry.education
+                    td.comments= entry.comments
