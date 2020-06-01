@@ -3,6 +3,9 @@
 
 * {
   --form-edge-color: rgba(221, 226, 237, 1);
+  --color1: rgba(255, 230, 179, 1);
+  --color2: rgba(196, 242, 242, 1);
+  --blocky-font: "Amatic SC", cursive;
   border-radius: 2px;
   padding: 1rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -12,8 +15,6 @@ html {
   display: flex;
   justify-content: center;
   padding: 0;
-  width: 100%;
-  height: 100%;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c4f2f2+0,ced9f4+30,fff7e7+77,fff2e7+100 */
   background: rgb(196, 242, 242); /* Old browsers */
   background: -moz-linear-gradient(
@@ -42,6 +43,10 @@ html {
 
 h1 {
   text-align: center;
+  /* font-family: cursive, */
+  font-family: var(--blocky-font);
+  font-size: 3rem;
+  margin-bottom: 0;
 }
 
 body {
@@ -64,13 +69,6 @@ p {
   text-align: justify;
 }
 
-span {
-  position: relative;
-  padding-left: 10px;
-  vertical-align: center;
-  font-weight: 200;
-}
-
 #title {
   text-align: center;
   background-color: hsl(182, 30%, 85%);
@@ -80,4 +78,30 @@ span {
 #description {
   text-align: center;
   margin: auto;
+}
+
+a:visited,
+a:hover,
+a:active,
+a:link {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+a:hover {
+  transform: scale(1.1);
+}
+
+a:focus {
+  box-shadow: 2px 2px 2px 2px var(--form-edge-color);
+  background-color: var(--color1);
+}
+
+a {
+  /* background-color: white; */
+  transition-duration: 300ms;
+  background-color: none;
+  font-size: 2rem;
+  font-family: var(--blocky-font);
 }

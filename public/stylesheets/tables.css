@@ -1,10 +1,10 @@
 table {
-  /* max-width: 210mm; */
   margin-top: 1rem;
   padding: 0;
   text-align: left;
   word-break: break-all;
-  /* word-wrap: break-word; */
+  border: 2px solid var(--form-edge-color);
+  box-shadow: 2px 2px 2px 2px var(--form-edge-color);
 }
 
 tbody {
@@ -15,7 +15,15 @@ tr {
   padding: 0;
 }
 
-.email,
+th {
+  font-family: var(--blocky-font);
+  font-size: 2rem;
+}
+
+.email {
+  width: 30%;
+}
+
 .phone {
   width: 20%;
 }

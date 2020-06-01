@@ -50,10 +50,12 @@
   }
 
   table tr {
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* justify-content: flex-start; */
     padding: 0;
+  }
+
+  th {
+    font-family: var(--blocky-font);
+    font-size: 1rem;
   }
 
   .email,
@@ -63,6 +65,9 @@
   .idnumber,
   .age {
     display: none;
-    /* visibility: collapse; */
+  }
+
+  .comments {
+    width: 70%;
   }
 }
