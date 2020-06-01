@@ -6,10 +6,9 @@ router.get("/", (req, res, next) => {
   let documentCount = "a bazillion";
 
   let randomData = simpleSurvey
-    .aggregate([{ $sample: { size: 3 } }])
+    .aggregate([{ $sample: { size: 10 } }])
     .toArray()
     .then((randomData) => {
-      // console.log("Random Data: ", randomData);
       simpleSurvey
         .countDocuments()
         .then((result) => {

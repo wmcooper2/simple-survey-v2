@@ -25,7 +25,7 @@ block content
         input(type="number", name="idnumber", placeholder="ID number", id="id", min="0", max="1000000") 
         input(type="number", name="age", placeholder="age", id="age", min="0", max="1000000")
 
-    div.formgroup.education
+    div.formgroup
       label(for="education") Grade level completed?
       div.formgroupfields
         select(id="education", name="education")
@@ -55,10 +55,20 @@ block content
         textarea(name="comments", placeholder="I eat boogies, I lick bicycle seats...")
 
     div.formgroup.submit
-      input(type="submit", value="Submit", id="sumbit")
+      input(type="submit", name="submit", value="Submit", id="sumbit")
 
 
-    div
-      ul
-        each entry in data
-          li= entry.firstname
+  table
+    thead
+      tr
+        th first name
+        th last name
+        th age
+        th hobbies
+    tbody
+      each entry in data
+        tr
+          td= entry.firstname
+          td= entry.lastname
+          td= entry.age
+          td.comments= entry.comments
