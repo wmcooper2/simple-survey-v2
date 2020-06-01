@@ -1,0 +1,44 @@
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  div.formgroup {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.formgroupfields {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: stretch; */
+    max-width: 90%;
+  }
+
+  div.formgroupfields div {
+    display: flex;
+    /* align-content: stretch; */
+    justify-content: center;
+    /* flex-direction: row; */
+    width: 100%;
+  }
+
+  div.formgroupfields div input {
+    margin-left: 0;
+  }
+
+  div.formgroup label {
+    width: 90%;
+  }
+
+  div.cats {
+    display: flex;
+    align-content: stretch;
+  }
+
+  div.formgroupfields textarea {
+    width: 90%;
+  }
+}
