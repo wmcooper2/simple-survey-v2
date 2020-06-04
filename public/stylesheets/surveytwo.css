@@ -12,8 +12,7 @@
 }
 
 html {
-  display: flex;
-  justify-content: center;
+  min-height: 100vh;
   padding: 0;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c4f2f2+0,ced9f4+30,fff7e7+77,fff2e7+100 */
   background: rgb(196, 242, 242); /* Old browsers */

@@ -19,6 +19,7 @@ To show how I've improved over the last couple of years by redoing an old projec
 * JavaScript
 * Pug
 * MongoDB
+* Express
 
 ## Problems/Solutions
 N/A
