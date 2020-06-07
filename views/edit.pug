@@ -2,13 +2,22 @@ extends layout
 
 block content
   h1 Real Simple Fake Survey
-  p Welcome to my survey. Tell me about your fake self so that I may collect your real fake-data. If you need some inspiration, then browse through the data form to see what others have added to my collection (the data entered by others does not necessarily reflect my opinions). Please and thanks.
-  a(href="/simple-survey-browse", name="browse") Browse entries here
-  a(href="/simple-survey-edit", name="edit") Edit an entry here
+  p Delete and update entries here. To delete, you just need the first and last name. If there is more than one entry that matches, then all of them will be deleted. Update however you need...
 
-  p So far, there are #{documents} entries in this database.
+  a(href="/simple-survey-v2", name="home") Home
+  a(href="/simple-survey-browse", name="edit") Browse entries here
 
-  form(method="POST", action="/submit-simple-survey-form")
+  form(method="POST", action="/simple-survey-delete")
+    div.formgroup.person
+      label Name
+      div.formgroupfields
+        input(type="text", name="firstname", placeholder="first", id="first", maxlength="50" required)
+        input(type="text", name="lastname", placeholder="last", id="last", maxlength="50" required)
+
+    div.formgroup.submit
+      input(type="submit", name="submit", value="Delete")
+
+  form(method="POST", action="/simple-survey-update")
     div.formgroup.person
       label Name
       div.formgroupfields
@@ -57,4 +66,4 @@ block content
         textarea(name="comments", placeholder="I eat boogies, I lick bicycle seats...")
 
     div.formgroup.submit
-      input(type="submit", name="submit", value="Submit", id="sumbit")
+      input(type="submit", name="submit", value="Update")

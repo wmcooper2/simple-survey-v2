@@ -14,6 +14,13 @@ router.get("/browse", (req, res, next) => {
     });
 });
 
+router.post("/delete-entry", (req, res, next) => {
+  console.log("Deleting...");
+  // res.send("Deleted");
+  res.redirect("/browse");
+  next();
+});
+
 router.post("/submitform", (req, res, next) => {
   //put data into database
   const simpleSurvey = res.locals.simpleSurvey;
